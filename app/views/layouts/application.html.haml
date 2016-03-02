@@ -11,6 +11,8 @@
       = notice
     %p.alert
       = alert
+    %p.facebook_sign_in
+      = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
     - if user_signed_in?
       = link_to "Sign out", destroy_user_session_path, method: :delete
     - else
