@@ -15,7 +15,9 @@
             = review.thoughts
             %strong= review.rating
             \/5
-    - else
+    -#           - if user_signed_in?
+    -#             = link_to "Delete Review", destroy_review_path, method: :delete
+    -# - else
       %p No reviews
 - else
   %h1 No restaurant yet!

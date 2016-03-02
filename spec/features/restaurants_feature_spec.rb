@@ -23,6 +23,10 @@ feature 'restaurants' do
 
 	context 'creating restaurants' do
 
+		before do
+			sign_up_and_in
+		end
+
 		scenario 'prompts user to fill out a form, then displays the new restaurant' do
 			visit '/restaurants'
 			click_link 'Add a restaurant'
@@ -64,7 +68,11 @@ feature 'restaurants' do
 	end
 
 	context 'editing restaurants' do
-		before { Restaurant.create name:'KFC'}
+
+		before do
+			Restaurant.create name:'KFC'
+			sign_up_and_in
+		end
 
 		scenario 'let user edit a restaurant' do
 			visit '/restaurants'
@@ -78,7 +86,10 @@ feature 'restaurants' do
 
 	context 'deleting restaurants' do
 
-	  before {Restaurant.create name: 'KFC'}
+		before do
+			Restaurant.create name:'KFC'
+			sign_up_and_in
+		end
 
 	  scenario 'removes a restaurant when a user clicks a delete link' do
 	    visit '/restaurants'
@@ -88,5 +99,28 @@ feature 'restaurants' do
 			expect(current_path).to eq '/restaurants'
 	  end
 
+	end
+
+	context 'user authentification requirements' do
+
+		before do
+			Restaurant.create name:'KFC'
+		end
+
+		scenario 'prompting the user to sign in before they can edit a restaurant' do
+			visit '/restaurants'
+			click_link 'Edit KFC'
+			expect(page).to have_content 'You need to sign in or sign up before continuing'
+			expect(page).not_to have_content 'Update Restaurant'
+			expect(current_path).to eq '/users/sign_in'
+		end
+
+		scenario 'only allowing users to delete their own restaurants' do
+	    visit '/restaurants'
+	    click_link 'Delete KFC'
+			expect(page).to have_content 'You need to sign in or sign up before continuing'
+	    expect(page).not_to have_content 'Restaurant deleted successfully'
+			expect(current_path).to eq '/users/sign_in'
+	  end
 	end
 end
