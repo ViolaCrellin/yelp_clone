@@ -28,10 +28,7 @@ feature 'restaurants' do
 		end
 
 		scenario 'prompts user to fill out a form, then displays the new restaurant' do
-			visit '/restaurants'
-			click_link 'Add a restaurant'
-			fill_in 'Name', with: 'KFC'
-			click_button 'Create Restaurant'
+			add_restaurant_KFC
 			expect(page).to have_content 'KFC'
 			expect(current_path).to eq '/restaurants'
 		end
@@ -70,8 +67,8 @@ feature 'restaurants' do
 	context 'editing restaurants' do
 
 		before do
-			Restaurant.create name:'KFC'
 			sign_up_and_in
+			add_restaurant_KFC
 		end
 
 		scenario 'let user edit a restaurant' do
@@ -87,8 +84,8 @@ feature 'restaurants' do
 	context 'deleting restaurants' do
 
 		before do
-			Restaurant.create name:'KFC'
 			sign_up_and_in
+			add_restaurant_KFC
 		end
 
 	  scenario 'removes a restaurant when a user clicks a delete link' do
