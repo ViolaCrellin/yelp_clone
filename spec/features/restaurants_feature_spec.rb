@@ -24,7 +24,7 @@ feature 'restaurants' do
 	context 'creating restaurants' do
 
 		before do
-			sign_up_and_in
+			sign_up_and_in('me@meemail.com', 'passwordy')
 		end
 
 		scenario 'prompts user to fill out a form, then displays the new restaurant' do
@@ -67,7 +67,7 @@ feature 'restaurants' do
 	context 'editing restaurants' do
 
 		before do
-			sign_up_and_in
+			sign_up_and_in('me@meemail.com', 'passwordy')
 			add_restaurant_KFC
 		end
 
@@ -84,7 +84,7 @@ feature 'restaurants' do
 	context 'deleting restaurants' do
 
 		before do
-			sign_up_and_in
+			sign_up_and_in('me@meemail.com', 'passwordy')
 			add_restaurant_KFC
 		end
 

@@ -1,22 +1,14 @@
 module SessionHelpers
 
-  def sign_up_and_in
+  def sign_up_and_in(email, password)
     visit('/')
     click_link('Sign up')
-    fill_in('Email', with: 'test@example.com')
-    fill_in('Password', with: 'testtest')
-    fill_in('Password confirmation', with: 'testtest')
+    fill_in('Email', with: email)
+    fill_in('Password', with: password)
+    fill_in('Password confirmation', with: password)
     click_button('Sign up')
   end
 
-  def sign_up_and_in_two
-    visit('/')
-    click_link('Sign up')
-    fill_in('Email', with: 'another@example.com')
-    fill_in('Password', with: 'testagain')
-    fill_in('Password confirmation', with: 'testagain')
-    click_button('Sign up')
-  end
 
   def add_restaurant_KFC
     visit '/restaurants'
@@ -25,15 +17,25 @@ module SessionHelpers
     click_button 'Create Restaurant'
   end
 
-  def leave_review_KFC
-    visit '/restaurants'
-		click_link 'Review KFC'
-		fill_in 'Thoughts', with: 'so so'
-		select '3', from: 'Rating'
-		click_button 'Leave Review'
+  def leave_review_KFC(thoughts, rating)
+  visit '/restaurants'
+  click_link 'Review KFC'
+  fill_in 'Thoughts', with: thoughts
+  select rating, from: 'Rating'
+  click_button 'Leave Review'
   end
 
   def sign_out
     click_link 'Sign out'
   end
+
+  def leave_multiple_reviews
+    sign_up_and_in('test@test.com', 'thisisapassword')
+    leave_review_KFC('so so', 3)
+    sign_out
+    sign_up_and_in('anothertest@test.com', 'thisisanotherpassword')
+    leave_review_KFC('great', 5)
+  end
+
+
 end
