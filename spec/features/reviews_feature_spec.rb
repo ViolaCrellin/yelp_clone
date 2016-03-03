@@ -17,6 +17,14 @@ feature 'reviewing' do
 		expect(page).to have_content 'so so'
 	end
 
+	scenario 'signed in users can only leave one review per restaurant' do
+		sign_up_and_in
+		leave_review_KFC
+		leave_review_KFC
+		expect(current_path).to eq '/restaurants'
+		expect(page).to have_content 'You have already reviewed this restaurant'
+	end
+
 	scenario 'users cannot delete review unless signed in' do
 		sign_up_and_in
 		leave_review_KFC
@@ -44,6 +52,5 @@ feature 'reviewing' do
 		expect(page).to have_content 'You can only delete your own reviews'
 		expect(current_path).to eq '/restaurants'
 		expect(page).to have_content 'so so'
-		# expect(page).to have_content 'You can only delete your own reviews'
 	end
 end
