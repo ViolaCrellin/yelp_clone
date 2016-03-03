@@ -27,6 +27,7 @@ gem 'haml'
 gem 'shoulda'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'dotiw'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -45,6 +46,8 @@ group :test do
 	gem 'rspec-rails'
   gem 'rspec-collection_matchers'
 	gem 'capybara'
+  gem 'orderly'
+  gem 'timecop'
 end
 
 group :development do

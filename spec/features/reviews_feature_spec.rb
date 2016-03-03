@@ -65,4 +65,24 @@ feature 'reviewing' do
 			expect(page).to have_content('Average rating: ★★★★☆')
 		end
 	end
+
+	feature '#review_recency' do
+		let(:test_time) {Time.new(2015, 01, 01, 13, 0, 0)}
+
+		before do
+			sign_up_and_in("test@test.com", 'thisisapassword')
+			Timecop.freeze(test_time)
+			leave_review_KFC('Good times', 4)
+			# Timecop.return
+    end
+
+
+		scenario 'you can see how recently the review was left' do
+			time_expected = time_ago_in_words(test_time, :highest_measure_only => true, :vague => :seconds)
+			expect(page).to have_content "Review left #{time_expected}"
+			Timecop.return
+			expect(page).to have_content('Average rating: ★★★★☆')
+		end
+	end
+
 end
