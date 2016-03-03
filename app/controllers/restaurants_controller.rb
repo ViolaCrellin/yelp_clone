@@ -34,18 +34,13 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    # if current_user.any?
-      if @restaurant.user_id == current_user.id
-        @restaurant.update(restaurant_params)
-        flash[:notice] = 'Restaurant edited successfully'
-      else
-        flash[:notice] = 'You can only edit your own restaurants'
-      end
-      redirect_to "/restaurants"
-    # else
-    #   flash[:notice] = 'You need to sign in or sign up before continuing'
-    #   redirect_to "/users/sign_in"
-    # end
+    if @restaurant.user_id == current_user.id
+      @restaurant.update(restaurant_params)
+      flash[:notice] = 'Restaurant edited successfully'
+    else
+      flash[:notice] = 'You can only edit your own restaurants'
+    end
+    redirect_to "/restaurants"
   end
 
   def destroy

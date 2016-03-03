@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302181221) do
+ActiveRecord::Schema.define(version: 20160302173250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "join_reviewed_restaurants", force: :cascade do |t|
-    t.integer "review_id"
-    t.integer "restaurant_id"
-  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"

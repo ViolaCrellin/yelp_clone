@@ -15,27 +15,11 @@
             = review.thoughts
             %strong= review.rating
             \/5
-    -#           - if user_signed_in?
-    -#             = link_to "Delete Review", destroy_review_path, method: :delete
-    -# - else
+            = link_to "Delete review for #{restaurant.name}", restaurant_review_path(review, restaurant), method: :delete
+    - else
       %p No reviews
 - else
   %h1 No restaurant yet!
-
--# %h3
--#   Reviews for
--#   = restaurant.name
--#
--# - if restaurant.reviews.any?
--#   %ul
--#     - restaurant.reviews.each do |review|
--#       %li
--#         = review.thoughts
--#         %strong= review.rating
--#         \/5
--# - else
--#   %p No reviews
-
 = link_to "Add a restaurant", new_restaurant_path
 = notice
 = yield

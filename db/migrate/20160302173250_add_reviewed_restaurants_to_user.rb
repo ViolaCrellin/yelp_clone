@@ -5,10 +5,4 @@ class AddReviewedRestaurantsToUser < ActiveRecord::Migration
     end
   end
 
-  # def down
-  #   change_table :products do |t|
-  #     t.remove_references :imageable, :polymorphic => true
-  #   end
-  # end
-
 end
