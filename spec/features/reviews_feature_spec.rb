@@ -62,7 +62,7 @@ feature 'reviewing' do
 
 		scenario 'you can see the average rating left by reviewers' do
 			expect(page).not_to have_content 'You have already reviewed this restaurant'
-			expect(page).to have_content('Average rating: 4')
+			expect(page).to have_content('Average rating: ★★★★☆')
 		end
 	end
 end
