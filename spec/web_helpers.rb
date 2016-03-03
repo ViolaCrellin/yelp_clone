@@ -18,11 +18,10 @@ module SessionHelpers
   end
 
   def leave_review_KFC(thoughts, rating)
-  visit '/restaurants'
-  click_link 'Review KFC'
-  fill_in 'Thoughts', with: thoughts
-  select rating, from: 'Rating'
-  click_button 'Leave Review'
+    click_link 'Review KFC'
+    fill_in 'Thoughts', with: thoughts
+    select rating, from: 'Rating'
+    click_button 'Leave Review'
   end
 
   def sign_out
@@ -33,8 +32,9 @@ module SessionHelpers
     sign_up_and_in('test@test.com', 'thisisapassword')
     leave_review_KFC('so so', 3)
     sign_out
-    sign_up_and_in('anothertest@test.com', 'thisisanotherpassword')
+    sign_up_and_in('anothertest@test.com', 'thisisyetanotherpassword')
     leave_review_KFC('great', 5)
+    sign_out
   end
 
 

@@ -54,18 +54,15 @@ feature 'reviewing' do
 		expect(page).to have_content 'so so'
 	end
 
-	feature 'average ratings' do
+	feature '#average_ratings' do
 
 		before do
-			Restaurant.create name:'KFC'
 			leave_multiple_reviews
 		end
 
 		scenario 'you can see the average rating left by reviewers' do
-
-			# expect(page).to have_content 'You can only delete your own reviews'
-			# expect(current_path).to eq '/restaurants'
-			# expect(page).to have_content 'so so'
+			expect(page).not_to have_content 'You have already reviewed this restaurant'
+			expect(page).to have_content('Average rating: 4')
 		end
 	end
 end
