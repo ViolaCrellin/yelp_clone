@@ -17,6 +17,13 @@ module SessionHelpers
     click_button 'Create Restaurant'
   end
 
+  def add_restaurant(name)
+    visit '/restaurants'
+    click_link 'Add a restaurant'
+    fill_in 'Name', with: name
+    click_button 'Create Restaurant'
+  end
+
   def leave_review_KFC(thoughts, rating)
     click_link 'Review KFC'
     fill_in 'Thoughts', with: thoughts
