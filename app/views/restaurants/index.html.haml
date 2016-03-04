@@ -18,8 +18,9 @@
             \/5
             = "Review left " + review_recency(review.created_at) + " ago"
             = link_to "Delete review for #{restaurant.name}", review_path(review), method: :delete
-            = link_to "Endorse this review of #{restaurant.name}", review_endorsements_path(review), method: :post
-            %p= pluralize review.endorsements.count, 'endorsement'
+            = link_to "Endorse this review of #{restaurant.name}", review_endorsements_path(review), class: 'endorsements-link'
+            %span.endorsements_count= review.endorsements.count
+            = 'endorsement'.pluralize review.endorsements.count
     - else
       %p No reviews
 - else

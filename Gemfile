@@ -49,6 +49,8 @@ group :test do
 	gem 'capybara'
   gem 'orderly'
   gem 'timecop'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do
