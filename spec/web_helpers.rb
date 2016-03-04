@@ -21,6 +21,7 @@ module SessionHelpers
     visit '/restaurants'
     click_link 'Add a restaurant'
     fill_in 'Name', with: name
+    attach_file('image', 'spec/support/url.jpg')
     click_button 'Create Restaurant'
   end
 

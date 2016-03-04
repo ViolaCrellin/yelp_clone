@@ -33,6 +33,11 @@ feature 'restaurants' do
 			expect(current_path).to eq '/restaurants'
 		end
 
+		scenario "can upload a picture" do
+		  add_restaurant_KFC
+			expect(page).to have_selector("img")
+		end
+
 		context 'an invalid restaurant' do
 
 	    it 'does not let you submit a name that is too short' do
