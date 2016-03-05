@@ -1,6 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+<<<<<<< HEAD
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+=======
+
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -36,6 +40,7 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+<<<<<<< HEAD
   config.paperclip_defaults = {
   :storage => :s3,
   :bucket => ENV['S3_BUCKET_NAME'],
@@ -46,6 +51,8 @@ Rails.application.configure do
     :s3_region => 'eu-west-1'
   }
 }
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
 root to: "restaurants#index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -9,12 +10,21 @@ resources :restaurants, shallow: true do
   end
 end
 
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+<<<<<<< HEAD
+=======
+  get 'restaurants' => 'restaurants#index'
+
+  resources :restaurants
+
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

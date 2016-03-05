@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160304145643) do
+=======
+ActiveRecord::Schema.define(version: 20160229163457) do
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "endorsements", force: :cascade do |t|
     t.integer  "review_id"
     t.datetime "created_at", null: false
@@ -77,4 +82,13 @@ ActiveRecord::Schema.define(version: 20160304145643) do
   add_foreign_key "restaurants", "users"
   add_foreign_key "reviews", "restaurants"
   add_foreign_key "reviews", "users"
+=======
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 end

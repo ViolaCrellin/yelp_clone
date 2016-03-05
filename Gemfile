@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+<<<<<<< HEAD
 gem 'haml'
 gem 'shoulda'
 gem 'devise'
@@ -34,6 +35,8 @@ gem 'aws-sdk'
 gem 'heroku'
 gem 'rails_12factor', group: :production
 gem 'puma'
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -48,6 +51,7 @@ group :development, :test do
   gem 'byebug'
 end
 
+<<<<<<< HEAD
 group :test do
 	gem 'rspec-rails'
   gem 'rspec-collection_matchers'
@@ -58,6 +62,8 @@ group :test do
   gem 'database_cleaner'
 end
 
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -65,3 +71,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+<<<<<<< HEAD
+=======
+
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1

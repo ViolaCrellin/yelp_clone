@@ -4,8 +4,11 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+<<<<<<< HEAD
 /config/secrets.yml
 
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 # Ignore bundler config.
 /.bundle
 
@@ -13,4 +16,7 @@
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
 .env
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1

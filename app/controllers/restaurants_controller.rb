@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+<<<<<<< HEAD
 
   before_action :authenticate_user!, :except => [:index, :show, :create]
 
@@ -53,4 +54,9 @@ class RestaurantsController < ApplicationController
     end
     redirect_to "/restaurants"
   end
+=======
+  def index
+    @restaurants = Restaurant.all
+  end
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 end

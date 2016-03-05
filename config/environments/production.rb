@@ -76,6 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+<<<<<<< HEAD
 
   config.paperclip_defaults = {
   :storage => :s3,
@@ -87,4 +88,6 @@ Rails.application.configure do
     :s3_region => 'eu-west-1'
   }
 }
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 end

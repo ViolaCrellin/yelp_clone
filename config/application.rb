@@ -15,6 +15,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+<<<<<<< HEAD
 # config.before_configuration do
 #   env_file = File.join(Rails.root, 'config', 'secrets.yml')
 #   YAML.load(File.open(env_file)).each do |key, value|
@@ -22,6 +23,8 @@ Bundler.require(*Rails.groups)
 #   end if File.exists?(env_file)
 # end
 
+=======
+>>>>>>> 437e5667eab3152c8c1dd1bbd3c2e463788cf8f1
 module YelpClone
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
